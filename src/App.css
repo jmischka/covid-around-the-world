@@ -1,38 +1,509 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 9px 12px;
+  background-color:rgba(0,0,0,.7);
+  z-index: 100;
+}
+
+.App-header h1 {
+  text-transform: uppercase;
+}
+
+.App-global,
+.featured-imgWrapper,
+.App-countries {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+}
+
+.App-countries {
+  margin: 100px 0 0 0;
+  border-top: 1px dotted white;
+}
+
+.featured-imgWrapper {
+  overflow: hidden;
+}
+
+.featured-img {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 40%;
+  background-color: grey;
+  overflow: hidden;
+}
+
+.featured-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%,-50%);
+}
+
+.App-intro,
+.country-intro {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 1100px;
+  text-align: center;
+  padding: 0 25px;
+}
+
+.App-intro {
+  margin: 50px auto 25px; 
+}
+
+.country-intro {
+  margin: 25px auto 50px;
+}
+
+.App-intro span {
+  font-weight: 700;
+}
+
+.App-global h2,
+.App-countries h2 { 
+  text-align: center;
+  color: #B6BF34;
+  text-transform: uppercase;
+}
+
+.App-global h2 {
+  padding: 50px 25px;
+}
+
+.App-global h2 span,
+.App-countries h2 span {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.App-countries h2 {
+  padding: 50px 25px 0;
+}
+
+.global-content,
+.details-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.global-content div,
+.details-content div {
+  margin: 50px 0 0 0;
+}
+
+.global-content div:first-child,
+.details-content div:first-child {
+  margin: 0 0 0 0;
+}
+
+.global-content span,
+.details-content span {
+  display: block;
+}
+
+.global-content span {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.global-totalConfirmed,
+.global-totalDeath,
+.global-newConfirmed,
+.global-newDeath,
+.details-totalConfirmed,
+.details-totalDeath,
+.details-newConfirmed,
+.details-newDeath {
+  margin: 0 0 0 0;
+  padding: 0 25px; 
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.global-totalConfirmed,
+.global-totalDeath,
+.details-totalConfirmed,
+.details-totalDeath {
+  width: 100%;
+}
+
+.global-newConfirmed,
+.global-newDeath,
+.details-newConfirmed,
+.details-newDeath {
+  width: 50%;
+}
+
+.global-newConfirmed {
+  border-right: 1px dotted white;
+}
+
+.details-newConfirmed {
+  border-right: 1px dotted black;
+}
+
+.stat-label,
+.country-statLabel {
+  margin: 0 0 0 0;
+  font-size: 1.6em;
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stat-number {
+  margin: 12px 0 0 0;
+  font-size: 10em;
+  line-height: 1;
+  text-align: center;
+}
+
+.global-totalDeath span,
+.global-newDeath span,
+.global-totalDeath span,
+.global-newDeath span {
+  color: #E55C5C;
+}
+
+.App-countries form {
+  margin: 0 0 25px;
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  background-color: #4D4D4D;
+  text-align: center;
+}
+
+.App-countries form input {
+  margin: 0 0 0 0;
+  font-size: 1.6em;
+  line-height: 1;
+  width: 33.333%;
+  height: auto;
+  padding: 5px;
+  background-color: #8C8C8C;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.App-countries form input::placeholder {
+  color: #FFFFFF;
+}
+
+.App-countries form button {
+  margin: 0 0 0 25px;
+  font-size: 1.6em;
+  line-height: 1;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: #1674A6;
+  color: white;
+}
+
+.App-countries form button:hover {
+  background-color: #12628C;
+}
+
+.App-countries ul {
+  position: relative;
+  margin: 0 auto 0;
+  width: 100%;
+  height: auto;
+  padding: 0 25px 0;
+  list-style-type: none;
+}
+
+.App-country {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  padding: 25px 0;
+  border-bottom: 1px dotted white;
+  color: white;
+}
+
+.App-country div {
+  margin: 0 0 0 0;
+  padding: 6px;
+  width: 33.333%;
+  text-align: left;
+}
+
+.country-name a {
+  margin: 0 0 0 0;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition-duration: .3s;
+}
+
+.country-name a:hover {
+  color: #E55C5C;
+  border-bottom: 1px solid #E55C5C;
+}
+
+.App-country span {
+  display: inline-block;
+  margin: 0 6px 0;
+}
+
+.country-stat {
+  font-size: 3.5em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.country-totalConfirmed span {
+  color: white;
+}
+
+.country-totalDeaths span {
+  color: #E55C5C;
+}
+
+.Country-details {
+  position: fixed;
+  left: 100%;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #CC5252;
+  z-index: 200;
+  box-shadow: inset 0 0 40px rgba(0,0,0,1);
+  transition-duration: .5s;
+  transition-timing-function: ease-out;
+}
+
+.Country-details.triggered {
+  left: 0;
+}
+
+.details-window {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+} 
+
+.details-container {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: auto;
+  padding: 75px 25px 75px;
+}
+
+.details-title {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: 40%;
+  border: 1px dotted black;
+  overflow: hidden;
+}
+
+.details-title img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate(-50%,-50%);
+}
+
+.details-countryName {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 15em;
+  font-weight: 700;
+  line-height: .8;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,.4);
+  letter-spacing: -2px;
+  transform: translate(-50%,-50%);
+}
+
+.details-closeButton {
+  display: block;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background-color: #662929;
+  outline: none;
+  border: none;
+  font-size: 2em;
+  font-weight: 700;
+  color: #E55C5C;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+
+.details-closeButton:hover {
+  background-color: black;
+}
+
+.details-content {
+  padding: 50px 0 0 0;
+}
+
+.details-content span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  color: black;
+}
+
+.details-content .stat-number {
+  font-weight: 600;
+}
+
+.Details-graph {
+  position: relative;
+  margin: 100px 0 0 0 !important;
+  width: 100%;
+  height: auto;
+}
+
+.graph-container {
+  position: relative;
+  margin: 0 0 50px 0 !important;
+  width: 100%;
+  height: auto;
+  padding: 25px 25px 25px 0;
+  background-color: black;
+}
+
+.graph-headline {
+  margin: 0 0 0 0;
+  padding: 25px 25px 0;
+}
+
+.App-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 9px 12px;
+  background-color: black;
+  z-index: 300;
+}
+
+.App-footer span {
+  display: block;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: white;
+  text-align: right;
+}
+
+.App-footer span a {
+  color: #B6BF34;
+}
+
+.App-footer span a:hover {
+  color: white;
+}
+
+.recharts-text.recharts-cartesian-axis-tick-value {
+  fill: #B3B3B3;
+}
+
+.recharts-legend-item span {
+  margin: 3px 0 0 0;
+  color: white;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 500px) {
+  .stat-number {
+    font-size: 6em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-country span {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .featured-img {
+    padding-bottom: 70%;
+  }
+  
+  .featured-img img {
+    width: auto;
+    height: 100%;
+  }
+  
+  .global-newConfirmed,
+  .global-newDeath,
+  .details-newConfirmed,
+  .details-newDeath {
+    width: 100%;
+  }
+
+  .global-newConfirmed {
+    border-right: none;
+  }
+
+  .details-title {
+    padding-bottom: 50%;
+  }
+
+  .details-countryName {
+    font-size: 6em;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .App-country div {
+    width: 100%;
+    text-align: center;
   }
 }
