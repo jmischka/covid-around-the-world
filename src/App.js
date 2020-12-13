@@ -8,9 +8,6 @@ import './App.css';
 
 require('dotenv').config()
 const enpoint = 'https://api.covid19api.com/summary';
-const PIXABAY_KEY = process.env.REACT_APP_PIXABAY_KEY;
-
-console.log(PIXABAY_KEY);
 
 class App extends Component {
   constructor(props) {
