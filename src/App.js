@@ -57,7 +57,7 @@ class App extends Component {
 
     Promise.all([
       fetch(`https://api.covid19api.com/total/dayone/country/${country}`),
-      fetch(`https://pixabay.com/api/?key=${PIXABAY_KEY}&q=${country}&image_type=photo&orientation=horizontal&per_page=3`)
+      fetch(`https://cors-anywhere.herokuapp.com/https://pixabay.com/api/?key=${PIXABAY_KEY}&q=${country}&image_type=photo&orientation=horizontal&per_page=3`)
     ]).then(responses => {
         return Promise.all(responses.map(response => {
         return response.json();
